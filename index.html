@@ -9,16 +9,10 @@
 </head>
 <body>
   <h1>Hello, world!</h1>
-  <script src="script.js" crossorigin="anonymous"></script>
-  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
 <table id="myTable">
   <tr class="header">
     <th style="width:60%;">Team</th>
-    <th style="width:10%;">English Ordinal</th>
-    <th style="width:10%;">Full Reduction</th>
-    <th style="width:10%;">Reverse Ordinal</th>
-    <th style="width:10%;">Reverse Full Reduction</th>
   </tr>
   <tr>
     <td>Boston Celtics</td>
@@ -36,26 +30,7 @@
   </tr>
 </table>
   
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
-</script>
+
 
 </body>
 </html>
