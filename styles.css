@@ -29,9 +29,7 @@
   background-color: #f1f1f1;
 }
 
-input {
-  padding-top: 50px;
-}
+
 
 
 /* Add a black background color to the top navigation */
@@ -103,4 +101,8 @@ input {
   content: "";
   display: table;
   clear: both;
+}
+
+.word-field{
+  padding-top: 50px;
 }
