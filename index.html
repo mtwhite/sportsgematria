@@ -686,11 +686,355 @@
 
 <div class="column">
 
-<h1>Date Numerology</h1>
-<table id="myTable">
-
-
-</table>
+<h1>Number Properties</h1>
+<div class="container">
+  <div class="row bg-secondary pt-1">
+  <div class="col text-center text-light">
+  <h5>
+                      Properties of:
+                  </h5>
+  </div>
+  </div>
+  <div class="row justify-content-between align-items-center">
+  <div class="col-2 text-right" id="propOf">
+                  Octal of: <span class="result-sec">0</span><br/>
+                  Duo of: <span class="result-sec">0</span><br/>
+                  Hex of: <span class="result-sec">0</span>
+  </div>
+  <div class="col-2 text-center">
+  <div class="ThreexSize numDisplay">
+                      0
+                  </div>
+  <div class="text-center font-weight-bold sr-only" id="sqrRoot">
+                      Square Root - 0
+                  </div>
+  </div>
+  <div class="col-2" id="propIn">
+                  In Octal of: <span class="result-sec">0</span><br/>
+                  In Duo of: <span class="result-sec">0</span><br/>
+                  In Hex of: <span class="result-sec">0</span>
+  </div>
+  </div>
+  <div class="row bg-secondary mt-2 pt-2 justify-content-between">
+  <div class="col-3 text-right text-light">
+  <h5>
+                      Sequence
+                  </h5>
+  </div>
+  <div class="col-3 text-center text-light">
+  <h5>
+                      Position
+                  </h5>
+  </div>
+  <div class="col-3 text-center text-light">
+  <h5>
+                      Relation
+                  </h5>
+  </div>
+  </div>
+  <div class="row mt-2 justify-content-between">
+  <div class="col-3 text-right">
+                  Fibonacci<br/>
+                  Triangular<br/>
+                  Prime<br/>
+                  Factorization<br/>
+  </div>
+  <div class="col-3 text-center">
+  <div class="" id="sequenceResult">
+                      Yes - <strong>th</strong><br/>
+                      Yes - <strong>th</strong><br/>
+                      Yes - <strong>th</strong><br/>
+                      Yes - <strong>th</strong><br/>
+  </div>
+  </div>
+  <div class="col-3 text-center">
+  <div class="bg-warning h5 d-flex justify-content-center align-items-center" style="height: 100px;">
+                      Database <br/> Requirement
+                  </div>
+  </div>
+  </div>
+  <div class="row bg-secondary mt-2 pt-2 justify-content-between">
+  <div class="col-3 text-right text-light">
+  <h5>
+                      Count
+                  </h5>
+  </div>
+  <div class="col-3 text-center text-light">
+  <h5>
+                      Divisors
+                  </h5>
+  </div>
+  <div class="col-3 text-center text-light">
+  <h5>
+                      Sum
+                  </h5>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col text-center h5 bg-warning p-2 mt-1">Prototype Locked</div>
+  </div>
+  <div class="row">
+  <div class="input-group">
+  <input class="form-control" id="numInput" placeholder="Input Number Here" type="number"/>
+  <div class="input-group-append">
+  <button class="btn btn-outline-secondary" id="inputBtn">
+                          Get Properties
+                      </button>
+  </div>
+  </div>
+  </div>
+  </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script>function factors(n) {
+      const factors = [];
+      let divisor = 2;
+    
+      while (n >= 2) {
+        if (n % divisor == 0) {
+          factors.push(divisor);
+          n = n / divisor;
+        } else {
+          divisor++;
+        }
+      }
+      return factors;
+  }
+  
+  $("#inputBtn").on("click", () => {
+      let number = $("#numInput").val();
+  
+      console.log(number);
+  
+      if(!number) return;
+  
+      const parser = new URL(window.location);
+      parser.searchParams.set("num", number);
+      window.location = parser.href;
+  })
+  
+  const urlParams = new URLSearchParams(window.location.search);
+  const fibonacciList = [];
+  const triangularList = [];
+  
+  var numDetails;
+  
+  function od(i) {
+      var j = i % 10,
+          k = i % 100;
+      if (j == 1 && k != 11) {
+          return i + "st";
+      }
+      if (j == 2 && k != 12) {
+          return i + "nd";
+      }
+      if (j == 3 && k != 13) {
+          return i + "rd";
+      }
+      return i + "th";
+  }
+  
+  $(document).ready( function() {
+      fillFibonacci();
+      fillTriangular();
+      sieve();
+      let num = parseInt(urlParams.get('num')) ? parseInt(urlParams.get('num')) : 1;
+  
+      numDetails = {
+          root: (isSquare(num)) ? Math.sqrt(num) : false,
+          of: {
+              octal: parseInt(num, 8),
+              duo: parseInt(num, 12),
+              hex: parseInt(num, 16)
+          },
+          in: {
+              octal: num.toString(8),
+              duo: num.toString(12),
+              hex: num.toString(16)
+          },
+          fib: getBeforeAfterFib(num),
+          tri: getBeforeAfterTri(num),
+          prime: getBeforeAfterPri(num)
+      };
+  
+      if(numDetails.prime.before != "YES"){
+          numDetails.factors = factors(num);
+      }else{
+          numDetails.factors = false;
+      }
+  
+      $(".numDisplay").text(num);
+  
+      // Properties Of
+      $("#propOf").html(`${(isNaN(numDetails.of.octal)) ? "" : `Octal of: <span class="result-sec aN">${numDetails.of.octal}</span><br>`}
+      Duo of: <span class="result-sec aN">${numDetails.of.duo}</span><br>
+      Hex of: <span class="result-sec aN">${numDetails.of.hex}</span>`);
+  
+      // Properties In
+      $("#propIn").html(`${(isNaN(numDetails.in.octal)) ? "" : `In Octal: <span class="result-sec aN">${numDetails.in.octal}</span><br>`}
+      In Duo: <span class="result-sec aN">${numDetails.in.duo}</span><br>
+      In Hex: <span class="result-sec aN">${numDetails.in.hex}</span>`);
+  
+      // Square Root
+      if(numDetails.root){
+          $("#sqrRoot").html(`Square Root - <span class="aN">${numDetails.root}</span>`).removeClass('sr-only');
+      }
+  
+  
+      // Sequence Results
+  
+      let seqResult = '';
+  
+      ["fib", "tri", "prime"].forEach( e => {
+          if(numDetails[e].before == "YES"){
+              seqResult += `<span class="text-success" >Yes - <strong class="aN">${od(numDetails[e].after)}</strong></span><br>`;
+          }else{
+              seqResult += `(<span class="aN">${od(numDetails[e].before[1])}</span>) <span class="aN">${numDetails[e].before[0]}</span> - <strong class="text-success aN">${num}</strong> - <span class="aN">${numDetails[e].after[0]}</span> (<span class="aN">${od(numDetails[e].after[1])}</span>)<br>`;
+          }
+      })
+  
+      $("#sequenceResult").html(seqResult);
+  
+      // Links all anchors
+      $(".aN").on("click", (e) => {
+          const num = parseInt(e.target.innerText);
+  
+          if(!num) return;
+  
+          const parser = new URL(window.location);
+          parser.searchParams.set("num", e.target.innerText);
+          window.location = parser.href;
+      })
+  });
+  
+  
+  function fillTriangular(){
+      let num = 1, numTemp = 1;
+  
+      for(let i = 1; i <= 4000; i++){
+          triangularList.push(num);
+          numTemp++;
+          num += numTemp;
+      }
+  }
+  
+  function fillFibonacci(){
+      let first = 1, second = 0, next;
+  
+      for(let i = 0; i < 100; i++){
+          next = first + second;
+          first = second;
+          second = next;
+  
+          fibonacciList.push(String(next));
+      }
+  }
+  
+  const isSquare = function (n) {
+      return n > 0 && Math.sqrt(n) % 1 === 0;
+  };
+  
+  function getBeforeAfterFib(n){
+      let before, after;
+  
+      for(let i = 0; i < fibonacciList.length; i++){
+          if(parseInt(fibonacciList[i]) == n){
+              before = "YES";
+              after = i + 1;
+              break;
+          }
+          if(parseInt(fibonacciList[i]) > n){
+              before = [fibonacciList[i-1], i];
+              after = [fibonacciList[i], i+1];
+              break;
+          }
+      }
+  
+      return {before: before, after: after};
+  }
+  
+  function getBeforeAfterTri(n){
+      // Checks first if it is a triangular num
+      if(isSquare(8*n + 1)){
+          return {before: "YES", after: (Math.sqrt(8*n + 1) - 1) / 2};
+      }
+  
+      let before, after;
+      for(let i = 0; i < triangularList.length; i++){
+          if(parseInt(triangularList[i]) > n){
+              before = [triangularList[i - 1], i];
+              after = [triangularList[i], i + 1];
+              break;
+          }
+      }
+  
+      return {before : before, after: after};
+  }
+  
+  function isPrime(num) {
+      for(var i = 2; i < num; i++)
+        if(num % i === 0) return false;
+      return num > 1;
+  }
+  
+  const primePos = Array(10000000).fill(0);
+  
+  function sieve()
+  {
+   
+      // 0 and 1 are not prime numbers
+      primePos[0] = -1, primePos[1] = -1;
+   
+      // Variable to store the position
+      var pos = 0;
+      for (var i = 2; i <= 10000000; i++)
+      {
+          if (primePos[i] == 0)
+          {
+   
+              // Incrementing the position for
+              // every prime number
+              primePos[i] = ++pos;
+              for (var j = i * 2; j <= 10000000; j += i)
+                  primePos[j] = -1;
+          }
+      }
+  }
+  
+  function getBeforeAfterPri(num){
+      // Checks first if the number is already a prime number
+      if(isPrime(num)){
+          return {before: "YES", after: primePos[num]};
+      }
+  
+      // Finds the prime before
+      let tempNum = num, before, after;
+  
+      while(true){
+          if(isPrime(tempNum-1)){
+              before = [tempNum-1, primePos[tempNum - 1]];
+              break;
+          }
+          tempNum--;
+          if(tempNum < 1) break;
+      }
+  
+      tempNum = num;
+  
+      // Finds the next prime
+      while(true){
+          if(isPrime(tempNum+1)){
+              after = [tempNum + 1, primePos[tempNum + 1]];
+              break;
+          }
+          tempNum++;
+      }
+  
+      return {before: before, after: after};
+  }
+  </script>
 
 </div>
 
