@@ -32,6 +32,8 @@
 
 
 
+
+
 /* Add a black background color to the top navigation */
 .topnav {
   position: relative;
@@ -140,4 +142,18 @@
 }
 #GemetriaTable .mainCiph:hover {
   box-shadow: none;
+}
+
+
+
+.ThreexSize {
+  font-size: 3rem;
+}
+
+.flex111auto {
+  flex: 1 1 auto !important;
+}
+.aN {
+  text-decoration: underline;
+  cursor: pointer;
 }

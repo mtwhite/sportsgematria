@@ -5,28 +5,14 @@
     <meta charset="utf-8" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Number Properties</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <style>
-      .ThreexSize {
-        font-size: 3rem;
-      }
 
-      .flex111auto {
-        flex: 1 1 auto !important;
-      }
-      .aN {
-        text-decoration: underline;
-        cursor: pointer;
-      }
-    </style>
+    <title>Number Properties</title>
+
   </head>
+
   <body>
     <!-- Top navigation -->
     <div class="topnav">
@@ -46,6 +32,7 @@
       </div>
     </div>
 
+    <!--Container for Number Calc-->
     <div class="container">
       <div class="row bg-secondary pt-1">
         <div class="col text-center text-light">
@@ -122,22 +109,24 @@
         </div>
       </div>
     </div>
+
+
   </body>
+
+  <!--Jquery-->
   <script
     src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"
   ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"
-  ></script>
+  
+
+  <!--Bootstrap + Popper-->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"crossorigin="anonymous"></script>
+
+
+  <!--Custom Number Prop Script-->
   <script>
     function factors(n) {
       const factors = [];
@@ -453,4 +442,6 @@
       return { before: before, after: after };
     }
   </script>
+
+
 </html>
