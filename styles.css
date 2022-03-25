@@ -96,6 +96,11 @@
   width: 33.33%;
 }
 
+.column3 {
+  float: right;
+  width: 33.33%;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
