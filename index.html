@@ -33,253 +33,345 @@
     </div>
 
 
-      
-        <!-- Option Modal -->
-
-        <div
-          class="modal fade"
-          id="mod-option"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="mod-option-title"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="mod-option-title">Options</h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <!-- Option Form -->
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="option-showCount"
-                    checked
-                  />
-                  <label for="option-showCount" class="custom-control-label"
-                    >Show Word/Letter Count</label
-                  >
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="option-showReduct"
-                    checked
-                  />
-                  <label for="option-showReduct" class="custom-control-label"
-                    >Show Reduction</label
-                  >
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="option-showResult"
-                    checked
-                  />
-                  <label for="option-showResult" class="custom-control-label"
-                    >Show Simple Result</label
-                  >
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="option-showCiph"
-                    checked
-                  />
-                  <label for="option-showCiph" class="custom-control-label"
-                    >Show Cipher Names</label
-                  >
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="option-showCiphChart"
-                    checked
-                  />
-                  <label for="option-showCiphChart" class="custom-control-label"
-                    >Show Cipher Chart</label
-                  >
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cipher Modal -->
-
-        <div
-          class="modal fade"
-          id="mod-cipher"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="mod-option-title"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="mod-cipher-title">Ciphers</h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col-4">
-                    <div
-                      class="nav nav-tabs"
-                      id="cipher-category"
-                      role="tablist"
-                      aria-orientation="vertical"
-                    ></div>
-                  </div>
-                  <div class="col-8">
-                    <div class="tab-content" id="cipher-content"></div>
-                  </div>
-                </div>
-                <!-- Cipher Form -->
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  onclick="toggleAll()"
-                >
-                  Toggle All
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-success"
-                  onclick="toggleBase()"
-                >
-                  Base Only
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Main App -->
-
-        <div class="container">
-
-          <!--Bootstrap Style Row that contains a column with two buttons -->
-          <div class="row p-2 mt-2 h5 text-center">
-
-            <!-- Bootstrap Column with two buttons-->
+     <!--CONTAINER WITH TWO--> 
+    <div class="container">
+        <div class="row">
+            <!--COLUMN 1-->
             <div class="col">
+                <!-- Option Modal -->
 
-              <!-- Cipher Button-->
-              <button id="mod-cipher-btn" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#mod-cipher">
-                Ciphers
+        <div
+        class="modal fade"
+        id="mod-option"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mod-option-title"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="mod-option-title">Options</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
               </button>
-
-              <!--Options Button-->
-              <button id="mod-option-btn" class="btn btn-light" type="button" data-toggle="modal" data-target="#mod-option">
-                Options
-              </button>
-
             </div>
-
-
+            <div class="modal-body">
+              <!-- Option Form -->
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="option-showCount"
+                  checked
+                />
+                <label for="option-showCount" class="custom-control-label"
+                  >Show Word/Letter Count</label
+                >
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="option-showReduct"
+                  checked
+                />
+                <label for="option-showReduct" class="custom-control-label"
+                  >Show Reduction</label
+                >
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="option-showResult"
+                  checked
+                />
+                <label for="option-showResult" class="custom-control-label"
+                  >Show Simple Result</label
+                >
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="option-showCiph"
+                  checked
+                />
+                <label for="option-showCiph" class="custom-control-label"
+                  >Show Cipher Names</label
+                >
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="option-showCiphChart"
+                  checked
+                />
+                <label for="option-showCiphChart" class="custom-control-label"
+                  >Show Cipher Chart</label
+                >
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
+        </div>
+      </div>
 
-          <!--Bootstrap Row-->
-          <div class="row">
+      <!-- Cipher Modal -->
 
-            <!--Centered Text-->
-            <div class="col-12 text-center h5 mt-3">Enter Word, Phrase or Number(s)</div>
-
-            <!--Text Field-->
-            <input type="text" class="form-control" id="textInput" placeholder="Put text here"/>
-
+      <div
+        class="modal fade"
+        id="mod-cipher"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mod-option-title"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="mod-cipher-title">Ciphers</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-4">
+                  <div
+                    class="nav nav-tabs"
+                    id="cipher-category"
+                    role="tablist"
+                    aria-orientation="vertical"
+                  ></div>
+                </div>
+                <div class="col-8">
+                  <div class="tab-content" id="cipher-content"></div>
+                </div>
+              </div>
+              <!-- Cipher Form -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="toggleAll()"
+              >
+                Toggle All
+              </button>
+              <button
+                type="button"
+                class="btn btn-success"
+                onclick="toggleBase()"
+              >
+                Base Only
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
+        </div>
+      </div>
 
-          <!--Gematria Table that shows ciphers-->
-          <div class="row border justify-content-between p-3 mt-2 align-items-between" id="GemetriaTable">
-            <table class="table table-borderless">
-              <tr>
-                <td class="ciphName text-center">
-                  English Ordinal<br />
-                  <strong class="h2">0</strong>
-                </td>
-                <td class="ciphName text-center">
-                  Full Reduction<br />
-                  <strong class="h2">0</strong>
-                </td>
-                <td class="ciphName text-center">
-                  Reverse Ordinal<br />
-                  <strong class="h2">0</strong>
-                </td>
-                <td class="ciphName text-center">
-                  Reverse Full Reduction<br />
-                  <strong class="h2">0</strong>
-                </td>
-              </tr>
-            </table>
-          </div>
+      <!-- Main App -->
 
+      <div class="container">
 
-          <div class="row mt-1" id="stringDetails">
-            <div class="col-12" id="strGeneral"></div>
-            <div class="col-12" id="strSpecific"></div>
-          </div>
+        <!--Bootstrap Style Row that contains a column with two buttons -->
+        <div class="row p-2 mt-2 h5 text-center">
 
+          <!-- Bootstrap Column with two buttons-->
+          <div class="col">
 
-          <div class="row" id="CharBreakpoint"></div>
+            <!-- Cipher Button-->
+            <button id="mod-cipher-btn" class="btn btn-secondary" type="button" data-toggle="modal" data-target="#mod-cipher">
+              Ciphers
+            </button>
 
+            <!--Options Button-->
+            <button id="mod-option-btn" class="btn btn-light" type="button" data-toggle="modal" data-target="#mod-option">
+              Options
+            </button>
 
-          <div class="row border p-1 mt-3" id="ciphGuide"></div>
-
-          <!--History Table-->
-          <div class="row p-2 mt-2 text-center">
-            <table class="table" id="historyCont">
-              <thead id="historyHeader">
-                <tr>
-                  <th scope="col">History</th>
-                </tr>
-              </thead>
-              <tbody id="savedStrings"></tbody>
-            </table>
           </div>
 
 
         </div>
+
+        <!--Bootstrap Row-->
+        <div class="row">
+
+          <!--Centered Text-->
+          <div class="col-12 text-center h5 mt-3">Enter Word, Phrase or Number(s)</div>
+
+          <!--Text Field-->
+          <input type="text" class="form-control" id="textInput" placeholder="Put text here"/>
+
+        </div>
+
+        <!--Gematria Table that shows ciphers-->
+        <div class="row border justify-content-between p-3 mt-2 align-items-between" id="GemetriaTable">
+          <table class="table table-borderless">
+            <tr>
+              <td class="ciphName text-center">
+                English Ordinal<br />
+                <strong class="h2">0</strong>
+              </td>
+              <td class="ciphName text-center">
+                Full Reduction<br />
+                <strong class="h2">0</strong>
+              </td>
+              <td class="ciphName text-center">
+                Reverse Ordinal<br />
+                <strong class="h2">0</strong>
+              </td>
+              <td class="ciphName text-center">
+                Reverse Full Reduction<br />
+                <strong class="h2">0</strong>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+
+        <div class="row mt-1" id="stringDetails">
+          <div class="col-12" id="strGeneral"></div>
+          <div class="col-12" id="strSpecific"></div>
+        </div>
+
+
+        <div class="row" id="CharBreakpoint"></div>
+
+
+        <div class="row border p-1 mt-3" id="ciphGuide"></div>
+
+        <!--History Table-->
+        <div class="row p-2 mt-2 text-center">
+          <table class="table" id="historyCont">
+            <thead id="historyHeader">
+              <tr>
+                <th scope="col">History</th>
+              </tr>
+            </thead>
+            <tbody id="savedStrings"></tbody>
+          </table>
+        </div>
+
+
+      </div>
+            
+
+            </div>
+
+            <!--COLUMN 2-->
+            <div class="col">
+                <div class="container">
+                    <div class="row bg-secondary pt-1">
+                      <div class="col text-center text-light">
+                        <h5>Properties of:</h5>
+                      </div>
+                    </div>
+                    <div class="row justify-content-between align-items-center">
+                      <div class="col-2 text-right" id="propOf">
+                        Octal of: <span class="result-sec">0</span><br />
+                        Duo of: <span class="result-sec">0</span><br />
+                        Hex of: <span class="result-sec">0</span>
+                      </div>
+                      <div class="col-2 text-center">
+                        <div class="ThreexSize numDisplay">0</div>
+                        <div class="text-center font-weight-bold sr-only" id="sqrRoot">
+                          Square Root - 0
+                        </div>
+                      </div>
+                      <div class="col-2" id="propIn">
+                        In Octal of: <span class="result-sec">0</span><br />
+                        In Duo of: <span class="result-sec">0</span><br />
+                        In Hex of: <span class="result-sec">0</span>
+                      </div>
+                    </div>
+                    <div class="row bg-secondary mt-2 pt-2 justify-content-between">
+                      <div class="col-3 text-right text-light">
+                        <h5>Sequence</h5>
+                      </div>
+                      <div class="col text-center text-light">
+                        <h5>Position</h5>
+                      </div>
+                    </div>
+                    <div class="row mt-2 jusify-content-between">
+                      <div class="col-3 text-right">Fibonacci</div>
+                      <div class="col text-center" id="seq-fib"></div>
+                    </div>
+                    <div class="row mt-2 jusify-content-between">
+                      <div class="col-3 text-right">Triangular</div>
+                      <div class="col text-center" id="seq-tri"></div>
+                    </div>
+                    <div class="row mt-2 jusify-content-between">
+                      <div class="col-3 text-right">Prime</div>
+                      <div class="col text-center" id="seq-prime"></div>
+                    </div>
+                    <div class="row mt-2 jusify-content-between" id="factorizationRow">
+                      <div class="col-3 text-right">Factorization</div>
+                      <div class="col text-center" id="seq-factor"></div>
+                    </div>
+                    <div class="row bg-secondary mt-2 pt-2 justify-content-between">
+                      <div class="col-3 text-right text-light">
+                        <h5>Count</h5>
+                      </div>
+                      <div class="col-3 text-center text-light">
+                        <h5>Divisors</h5>
+                      </div>
+                      <div class="col-3 text-center text-light">
+                        <h5>Sum</h5>
+                      </div>
+                    </div>
+                    <div class="row justify-content-between" id="lastSectionResult"></div>
+                    <div class="row mt-3">
+                      <div class="input-group">
+                        <input
+                          class="form-control"
+                          id="numInput"
+                          placeholder="Input Number Here"
+                          type="number"
+                        />
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" id="inputBtn">
+                            Get Properties
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+
+
+    </div>
 
 
 
