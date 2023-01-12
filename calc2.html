@@ -28,32 +28,21 @@
         font-size: 18px;
       }
 
-      /* Table styles */
-      table {
-        margin: 20px auto;
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      /* Table headers */
-      th, td {
-        border: 1px solid #ccc;
-        padding: 8px;
+      /* Result paragraph styles */
+      p#result {
         text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
       }
     </style>
   </head>
   <body>
     <form>
       <label for="word">Enter a word:</label>
-      <input type="text" id="word" name="word" oninput="calculate()" onkeyup="handleKeyPress(event)">
+      <input type="text" id="word" name="word" oninput="calculate()">
     </form>
-    <table id="table">
-      <tr>
-        <th>Word</th>
-        <th>Value</th>
-      </tr>
-    </table>
+    <p id="result"></p>
     <script>
       function calculate() {
         let word = document.getElementById("word").value;
@@ -64,23 +53,7 @@
             value += letter.charCodeAt(0) - 'A'.charCodeAt(0) + 1;
           }
         }
-      }
-
-      function handleKeyPress(e) {
-        if (e.key === 'Enter') {
-          addRow();
-        }
-      }
-
-      function addRow() {
-        let word = document.getElementById("word").value;
-        let table = document.getElementById("table");
-        let row = table.insertRow();
-        let wordCell = row.insertCell(0);
-        let valueCell = row.insertCell(1);
-        wordCell.innerHTML = word;
-        valueCell.innerHTML = calculate();
-        document.getElementById("word").value = "";
+        document.getElementById("result").innerHTML = "The value of the word '" + word + "' is " + value;
       }
     </script>
   </body>
