@@ -28,40 +28,34 @@
         font-size: 18px;
       }
 
-      /* List styles */
-      ul {
+      /* Table styles */
+      table {
         margin: 20px auto;
         width: 100%;
-        list-style-type: none;
-        padding: 0;
+        border-collapse: collapse;
       }
 
-      /* List item styles */
-      li {
-        padding: 10px;
-        margin-bottom: 10px;
-        background-color: #f1f1f1;
+      /* Table headers */
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
         text-align: center;
-        font-size: 18px;
-        border-radius: 4px;
       }
     </style>
   </head>
   <body>
     <form>
       <label for="word">Enter a word:</label>
-      <input type="text" id="word" name="word" onkeyup="handleKeyPress(event)">
+      <input type="text" id="word" name="word" oninput="calculate()" onkeyup="handleKeyPress(event)">
     </form>
-    <ul id="list"></ul>
+    <table id="table">
+      <tr>
+        <th>Word</th>
+        <th>Value</th>
+      </tr>
+    </table>
     <script>
-      let wordsList = [];
-      function handleKeyPress(e) {
-        if (e.key === 'Enter') {
-          addWord();
-        }
-      }
-
-      function addWord() {
+      function calculate() {
         let word = document.getElementById("word").value;
         let value = 0;
         for (let i = 0; i < word.length; i++) {
@@ -70,18 +64,25 @@
             value += letter.charCodeAt(0) - 'A'.charCodeAt(0) + 1;
           }
         }
-        wordsList.push({word: word, value: value});
-        document.getElementById("word").value = "";
-        displayList();
+        return value;
       }
 
-      function displayList() {
-        let list = document.getElementById("list");
-        list.innerHTML = "";
-        for (let i = 0; i < wordsList.length; i++) {
-          let item = document.createElement("li");
-          item.innerHTML = wordsList[i].word + " : " + wordsList[i].value;
-          list.appendChild(item);
+      function handleKeyPress(e) {
+        if (e.key === 'Enter') {
+          addRow();
         }
       }
+
+      function addRow() {
+        let word = document.getElementById("word").value;
+        let table = document.getElementById("table");
+        let row = table.insertRow();
+        let wordCell = row.insertCell(0);
+        let valueCell = row.insertCell(1);
+        wordCell.innerHTML = word;
+        valueCell.innerHTML = calculate();
+        document.getElementById("word").value = "";
+      }
     </script>
+  </body>
+</html>
