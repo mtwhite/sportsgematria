@@ -28,23 +28,40 @@
         font-size: 18px;
       }
 
-      /* Result paragraph styles */
-      p#result {
+      /* List styles */
+      ul {
+        margin: 20px auto;
+        width: 100%;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      /* List item styles */
+      li {
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #f1f1f1;
         text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        margin-top: 20px;
+        font-size: 18px;
+        border-radius: 4px;
       }
     </style>
   </head>
   <body>
     <form>
       <label for="word">Enter a word:</label>
-      <input type="text" id="word" name="word" oninput="calculate()">
+      <input type="text" id="word" name="word" onkeyup="handleKeyPress(event)">
     </form>
-    <p id="result"></p>
+    <ul id="list"></ul>
     <script>
-      function calculate() {
+      let wordsList = [];
+      function handleKeyPress(e) {
+        if (e.key === 'Enter') {
+          addWord();
+        }
+      }
+
+      function addWord() {
         let word = document.getElementById("word").value;
         let value = 0;
         for (let i = 0; i < word.length; i++) {
@@ -53,8 +70,18 @@
             value += letter.charCodeAt(0) - 'A'.charCodeAt(0) + 1;
           }
         }
-        document.getElementById("result").innerHTML = "The value of the word '" + word + "' is " + value;
+        wordsList.push({word: word, value: value});
+        document.getElementById("word").value = "";
+        displayList();
+      }
+
+      function displayList() {
+        let list = document.getElementById("list");
+        list.innerHTML = "";
+        for (let i = 0; i < wordsList.length; i++) {
+          let item = document.createElement("li");
+          item.innerHTML = wordsList[i].word + " : " + wordsList[i].value;
+          list.appendChild(item);
+        }
       }
     </script>
-  </body>
-</html>
