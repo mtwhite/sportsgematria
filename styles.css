@@ -157,3 +157,93 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+:root {
+        --c-prime: #141820;
+        --c-sec: rgb(153, 204, 255);
+        --c-tri: #63b8ff;
+        --c-alt-prime: #313b4d;
+        --c-alt-sec: #000000;
+        --text: white;
+    }
+    
+    
+    html, body {
+        background: var(--c-prime);
+    }
+    
+    * {
+        color: var(--text);
+    }
+    
+    .modal label,
+    .modal h5 {
+        color: var(--c-alt-sec) !important;
+    }
+    
+    input,
+    textarea {
+        background: var(--c-alt-prime) !important;
+        color: white !important;
+    }
+    
+    .bgc-prime {
+        background-color: var(--c-prime);
+    }
+    
+    .bgc-sec {
+        background-color: var(--c-sec);
+    }
+    
+    .bgc-tri {
+        background-color: var(--c-tri);
+    }
+    
+    .bgc-altP {
+        background-color: var(--c-alt-prime);
+    }
+    
+    .bgc-altS {
+        background-color: var(--c-alt-sec);
+    }
+    
+    .text-prime {
+        color: var(--c-prime);
+    }
+    
+    .text-sec {
+        color: var(--c-sec);
+    }
+    
+    .text-tri {
+        color: var(--c-tri);
+    }
+    
+    .text-altP {
+        color: var(--c-alt-prime);
+    }
+    
+    .text-altS {
+        color: var(--c-alt-sec);
+    }
+    
+    td {
+        border-color: var(--c-tri) !important;
+    }
+    
+    #dateNumerologies table tr td:last-child {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+     
+    #historyCont th,
+    #historyCont table td {
+        border-color: transparent !important;
+    }
+    
+    table th {
+        color: var(--c-sec);
+        background: var(--c-alt-prime);
+    }

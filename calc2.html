@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <style>
+      /* Form styles */
+      form {
+        width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Label styles */
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      /* Input field styles */
+      input[type="text"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 18px;
+      }
+
+      /* Table styles */
+      table {
+        margin: 20px auto;
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      /* Table headers */
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="word">Enter a word:</label>
+      <input type="text" id="word" name="word" oninput="calculate()" onkeyup="handleKeyPress(event)">
+    </form>
+    <table id="table">
+      <tr>
+        <th>Word</th>
+        <th>Value</th>
+      </tr>
+    </table>
+    <script>
+      window.onload = function(){
+        function calculate() {
+          let word = document.getElementById("word").value;
+          let value = 0;
+          for (let i = 0; i < word.length; i++) {
+            let letter = word[i];
+            if (letter >= 'A' && letter <= 'Z') {
+              value += letter.charCodeAt(0) - 'A'.charCodeAt(0) + 1;
+            }
+          }
+          return value;
+        }
+
+        function handleKeyPress(e) {
+          if (e.key === 'Enter') {
+            addRow();
+          }
+        }
+
+        function addRow() {
+          let word = document.getElementById("word").value;
+          let table = document.getElementById("table");
+          let row = table.insertRow();
+          let wordCell = row.insertCell(0);
+          let valueCell = row.insertCell(1);
+          wordCell.innerHTML = word;
+          valueCell.innerHTML = calculate();
+        }
+      }
